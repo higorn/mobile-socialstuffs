@@ -17,8 +17,8 @@
 - [1.2](#1.2) <a name='1.2'></a> **Instalação Android**
 ```sh
 # Cria a aplicação e adicione a plataforma
-$ cordova create myApp
-$ cd myApp
+$ cordova create myapp br.com.yourdomain.mobile.myapp myApp
+$ cd myapp
 $ cordova platform add android
 
 # Configure o FB App ID em res/values/facebookconnect.xml
@@ -27,7 +27,7 @@ $ vi res/values/facebookconnect.xml
 
 <resources>
     <string name="fb_app_id">123456789</string>
-    <string name="fb_app_name">TEST</string>
+    <string name="fb_app_name">myapp</string>
 </resources>
 
 ```
@@ -35,11 +35,14 @@ Em seguida continue com a configuração do cordova executando os seguintes coma
 
 ```sh
 # IMPORTATE: Não esqueça de trocar o APP_ID e APP_NAME para os da sua aplicação
-cordova -d plugin add https://github.com/phonegap/phonegap-facebook-plugin.git --variable APP_ID="123456789" --variable APP_NAME="myApplication"
+cordova -d plugin add https://github.com/phonegap/phonegap-facebook-plugin.git \
+ --variable APP_ID="123456789" --variable APP_NAME="myApp"
 
-android update project --subprojects --path "platforms/android" --target android-22 --library "CordovaLib"
+android update project --subprojects --path "platforms/android" \
+ --target android-22 --library "CordovaLib"
 
-android update project --subprojects --path "platforms/android" --target android-22 --library "com.phonegap.plugins.facebookconnect/FacebookLib"
+android update project --subprojects --path "platforms/android" \
+ --target android-22 --library "phonegap-facebook-plugin/myapp-FacebookLib"
 ```
 
 
