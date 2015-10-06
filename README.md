@@ -35,14 +35,30 @@ Em seguida continue com a configuração do cordova executando os seguintes coma
 
 ```sh
 # IMPORTATE: Não esqueça de trocar o APP_ID e APP_NAME para os da sua aplicação
-cordova -d plugin add https://github.com/phonegap/phonegap-facebook-plugin.git \
+$ cordova -d plugin add https://github.com/phonegap/phonegap-facebook-plugin.git \
  --variable APP_ID="123456789" --variable APP_NAME="myApp"
 
-android update project --subprojects --path "platforms/android" \
+$ android update project --subprojects --path "platforms/android" \
  --target android-22 --library "CordovaLib"
 
-android update project --subprojects --path "platforms/android" \
+$ android update project --subprojects --path "platforms/android" \
  --target android-22 --library "phonegap-facebook-plugin/myapp-FacebookLib"
+ 
+ $ echo '{"directory": "www/bower_components"}' > .bowerrc
+ $ bower install -S ngCordova
+```
+
+Inclua o ng-cordova.js ou ng-cordova.min.js no seu index.html antes do cordova.js e após seu angularjs/ionic, já que o ngCordova depende do angularjs.
+
+```javascript
+<script src="bower_components/ngCordova/dist/ng-cordova.js"></script>
+<script src="cordova.js"></script>
+```
+
+Injete o ngCordova como dependência no seu módulo angular
+
+```javascript
+angular.module('myApp', ['ngCordova'])
 ```
 
 
