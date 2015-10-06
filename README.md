@@ -20,7 +20,8 @@
 $ cordova create myApp
 $ cd myApp
 $ cordova platform add android
-# Configura o FB App ID em res/values/facebookconnect.xml
+
+# Configure o FB App ID em res/values/facebookconnect.xml
 $ mkdir -p res/values
 $ vi res/values/facebookconnect.xml
 
@@ -28,6 +29,19 @@ $ vi res/values/facebookconnect.xml
     <string name="fb_app_id">123456789</string>
     <string name="fb_app_name">TEST</string>
 </resources>
+
+```
+Em seguida continue com a configuração do cordova executando os seguintes comandos
+
+```sh
+# IMPORTATE: Não esqueça de trocar o APP_ID e APP_NAME para os da sua aplicação
+cordova -d plugin add https://github.com/phonegap/phonegap-facebook-plugin.git --variable APP_ID="123456789" --variable APP_NAME="myApplication"
+
+android update project --subprojects --path "platforms/android" --target android-22 --library "CordovaLib"
+
+android update project --subprojects --path "platforms/android" --target android-22 --library "com.phonegap.plugins.facebookconnect/FacebookLib"
+```
+
 
 - [1.3](#1.3) <a name='1.3'></a> **Instalação IOS**
 
