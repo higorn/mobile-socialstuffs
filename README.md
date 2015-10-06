@@ -1,4 +1,4 @@
-# Mídias sociais em aplicativos mobile híbridos
+# Midias sociais em aplicativos mobile híbridos com ngCordova
 
 ## Sumário
 
@@ -7,5 +7,3 @@
 ## Facebook
 
 - [1.1](#1.1) <a name='1.1'></a> **Preparação**: Primeiramente é necessário criar um AppID no portal de desenvolvimento do Facebook (https://developers.facebook.com).
-- 
-
