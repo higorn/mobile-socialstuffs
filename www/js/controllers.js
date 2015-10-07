@@ -109,7 +109,7 @@ app.controller('LoginCtrl', ['$scope', '$cordovaFacebook', function($scope, $cor
       console.log('resp: '+JSON.stringify(resp));
       if (resp.status === 'connected') {
 
-        $cordovaFacebook.api('me', ['public_profile', 'email']).then(function(result) {
+        $cordovaFacebook.api('me', null).then(function(result) {
 
           console.log('res: '+JSON.stringify(result));
           $scope.appNavigator.popPage();
