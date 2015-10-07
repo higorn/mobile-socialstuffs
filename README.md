@@ -3,6 +3,7 @@
 ## Sumário
 
 1. [Facebook](#Facebook)
+2. [Referências](#Referências)
 
 ## Facebook
 
@@ -84,6 +85,13 @@ $ keytool -exportcert -alias androiddebugkey -keystore ~/.android/debug.keystore
 # Caso pessa senha, deixe em brando apenas pressionando enter
 ```
 
+- [1.3](#1.3) <a name='1.3'></a> **Instalação IOS**
+
+cordova plugin add https://github.com/Wizcorp/phonegap-facebook-plugin.git --variable APP_ID="123456789" --variable APP_NAME="myApplication"
+
+
+- [1.4](#1.4) <a name='1.4'></a> **Utilizando**
+
 Inclua o ng-cordova.js ou ng-cordova.min.js no seu index.html antes do cordova.js e após seu angularjs/ionic, já que o ngCordova depende do angularjs.
 
 ```javascript
@@ -97,8 +105,37 @@ Injete o ngCordova como dependência no seu módulo angular
 angular.module('myApp', ['ngCordova'])
 ```
 
+## Métodos
 
-- [1.3](#1.3) <a name='1.3'></a> **Instalação IOS**
+#### login(permissions)
+
+Param | Type | Detail
+------|------|--------
+permissions | String Array | Um string array de permissões que o seu app requer. Ex: ["public_profile", "email"]
+
+Retorna um objeto com as informações do usuário, como id, lastName, etc.
+
+#### showDialog(options)
+
+Param | Type | Detail
+------|------|--------
+options | Object | Um objeto JSON com 3 keys: method, link, caption. Todos do tipo string.
+
+#### api(path, permissions)
+Param | Type | Detail
+------|------|--------
+path | String | O caminho da API Facebook. Ex: me, me/photos, search?q={your-query}
+permissions | String Array | Um string array de permissões que o seu app requer. Sete para null para que o app do Facebook não abra novamente.
+
+#### getLoginStatus(message)
+Verifica se o usuário já está logado. Se ele ja estiver logado, não é precisso logar novamente e o método api pode ser chamado.
+
+#### getAccessToken(message)
+Recupera o tokem de acesso da sessão atual.
+
+#### logout(message)
+Faz logout do Facebook
+
 
 ## Exemplo de Login
 
@@ -158,3 +195,8 @@ $cordovaFacebook.showDialog({
     
 ...
 ```
+
+## Referências
+http://http://ngcordova.com/docs/plugins/facebook/
+https://github.com/Wizcorp/phonegap-facebook-plugin/
+https://developers.facebook.com
