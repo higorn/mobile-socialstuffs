@@ -43,9 +43,27 @@ $ android update project --subprojects --path "platforms/android" \
 
 $ android update project --subprojects --path "platforms/android" \
  --target android-22 --library "phonegap-facebook-plugin/myapp-FacebookLib"
+
+$ cd platforms/android
+$ cp local.properties phonegap-facebook-plugin/myapp-FacebookLib/
+$ ant clean
+$ cd phonegap-facebook-plugin/socialstuffs-FacebookLib/
+$ ant clean
+
+# edite o AndroidManifest.xml e troque o minSdkVersion e targetSdkVersion para o seu ambiente
+# no meu caso ficou:
+# <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="22" />
+
+$ ant release
+
+# OBS: Se aparecer BUILD FAILED após o 'ant release' reclamando que não existe o ant-build ('...ant-build does not exist), pode desconsiderar.
+
+$ cd ../../../..
+
+$ cordova build android
  
- $ echo '{"directory": "www/bower_components"}' > .bowerrc
- $ bower install -S ngCordova
+$ echo '{"directory": "www/bower_components"}' > .bowerrc
+$ bower install -S ngCordova
 ```
 
 Inclua o ng-cordova.js ou ng-cordova.min.js no seu index.html antes do cordova.js e após seu angularjs/ionic, já que o ngCordova depende do angularjs.
