@@ -3,7 +3,7 @@
 ## Sumário
 
 1. [Facebook](#facebook)
-  1.1. [Preparação](1.1)
+  1.1. [Preparação](#1.1)
 
 1. [Referências](#referências)
 
