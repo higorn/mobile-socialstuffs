@@ -16,7 +16,8 @@
 
 ## Facebook
 
-### [1.1](#1.1) <a name='1.1'></a> Preparação: Primeiramente é necessário criar um AppID no portal de desenvolvimento do Facebook (https://developers.facebook.com). Em 'My Apps' selecione a opção 'Add a New App'.
+### [1.1](#1.1) <a name='1.1'></a> Preparação
+Primeiramente é necessário criar um AppID no portal de desenvolvimento do Facebook (https://developers.facebook.com). Em 'My Apps' selecione a opção 'Add a New App'.
 ![alt tag](https://github.com/higorn/mobile-socialstuffs/blob/master/resources/img/getStarted-1.png)
   Selecione a plataforma desejada, entre com um nome para o App e clique no botão para criar o App ID.
   Após isso você será direcionado para a página de Quick Start da plataforma, clique em 'Skip Quick Start' no canto superior direito para pular essa etapa que será realizada mais a frente.
