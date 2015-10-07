@@ -2,8 +2,8 @@
 
 ## Sumário
 
-1. [Facebook](##Facebook)
-1. [Referências](##Referências)
+1. [Facebook](#Facebook)
+1. [Referências](#Referências)
 
 ## Facebook
 
@@ -84,7 +84,7 @@ $ keytool -exportcert -alias androiddebugkey -keystore ~/.android/debug.keystore
 
 # Caso pessa senha, deixe em brando apenas pressionando enter
 ```
-**[⬆ back to top](#Sumário)**
+**[⬆ back to top](#sumário)**
 
 - [1.3](#1.3) <a name='1.3'></a> **Instalação IOS**
 
@@ -197,7 +197,7 @@ $cordovaFacebook.showDialog({
 ...
 ```
 
-## Referências
+## Referências(#Referências)
 - [2.1](#2.1) <a name='2.1'></a> http://ngcordova.com/docs/plugins/facebook/
 - [2.2](#2.2) <a name='2.2'></a> https://github.com/Wizcorp/phonegap-facebook-plugin/
 - [2.3](#2.3) <a name='2.3'></a> https://developers.facebook.com
