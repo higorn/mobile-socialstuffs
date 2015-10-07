@@ -61,6 +61,12 @@ $ ant release
 # OBS: Se aparecer BUILD FAILED após o 'ant release' reclamando que não existe o ant-build ('...ant-build does not exist), pode desconsiderar.
 
 $ cd ../../../..
+$ cordova build android
+
+# Instale o ngCordova
+
+$ echo '{"directory": "www/bower_components"}' > .bowerrc
+$ bower install -S ngCordova
 ```
 
 Para a autenticação funcionar de forma nativa no android, é necessário adicionar a plataforma Android no seu portal de desenvolvimento do Facebook (https://developers.facebook.com).
@@ -76,13 +82,6 @@ E para gerar a chave de denvolvimento execute o seguinte comando abaixo
 $ keytool -exportcert -alias androiddebugkey -keystore ~/.android/debug.keystore | openssl sha1 -binary | openssl base64
 
 # Caso pessa senha, deixe em brando apenas pressionando enter
-```
-
-```sh
-$ cordova build android
- 
-$ echo '{"directory": "www/bower_components"}' > .bowerrc
-$ bower install -S ngCordova
 ```
 
 Inclua o ng-cordova.js ou ng-cordova.min.js no seu index.html antes do cordova.js e após seu angularjs/ionic, já que o ngCordova depende do angularjs.
@@ -101,3 +100,61 @@ angular.module('myApp', ['ngCordova'])
 
 - [1.3](#1.3) <a name='1.3'></a> **Instalação IOS**
 
+## Exemplo de Login
+
+```javascript
+module.controller('MyCtrl', function($scope, $cordovaFacebook) {
+
+  $cordovaFacebook.login(["public_profile", "email", "user_friends"])
+    .then(function(success) {
+      // { id: "634565435",
+      //   lastName: "bob"
+      //   ...
+      // }
+    }, function (error) {
+      // error
+    });
+...    
+    
+```
+
+## Exemplo de compartilhamento
+
+```javascript
+...
+
+# usando $cordovaSocialSharing
+
+$cordovaSocialSharing.shareViaFacebook(message, image, link).then(function(result) {
+  // {true}
+}, function(error) {
+  // error
+});
+
+# usando $cordovaFacebook
+
+$cordovaFacebook.showDialog({
+  method: 'share',
+  href: link
+}).then(function(result) {
+  // {"post_id":"1196750357008..."}
+}, function(error) {
+  // error
+});
+
+```
+
+## Buscando informações do usuário
+
+```javascript
+...
+
+ $cordovaFacebook.api("me", ["public_profile"])
+    .then(function(success) {
+      // success
+    }, function (error) {
+      // error
+    });
+    
+...
+```
