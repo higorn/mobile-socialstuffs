@@ -3,7 +3,14 @@
 ## Sumário
 
 1. [Facebook](#facebook)
-  1.1. [Preparação](#1.1)
+  * 1.1. [Preparação](#1.1)
+  * 1.2. [Instalação Android](#1.2)
+  * 1.3. [Instalação IOs](#1.3)
+  * 1.4. [Utilizando](#1.4)
+  * 1.4.1 [Métodos](#1.4.1)
+  * 1.4.2 [Exemplo de login](#1.4.2)
+  * 1.4.3 [Exemplo de compartilhamento](#1.4.3)
+  * 1.4.4 [Recuperando informações do usuário](#1.4.4)
 
 1. [Referências](#referências)
 
@@ -112,7 +119,7 @@ angular.module('myApp', ['ngCordova'])
 ```
 **[⬆ back to top](#sumário)**
 
-## Métodos
+[1.4.1](#1.4.1) <a name='1.4.1'></a> ###Métodos
 
 #### login(permissions)
 
