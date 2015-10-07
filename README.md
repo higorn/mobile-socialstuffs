@@ -37,6 +37,8 @@ Em seguida continue com a configuração do cordova executando os seguintes coma
 # IMPORTATE: Não esqueça de trocar o APP_ID e APP_NAME para os da sua aplicação
 $ cordova -d plugin add https://github.com/phonegap/phonegap-facebook-plugin.git \
  --variable APP_ID="123456789" --variable APP_NAME="myApp"
+ 
+$ cordova plugin add https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin.git
 
 $ android update project --subprojects --path "platforms/android" \
  --target android-22 --library "CordovaLib"
