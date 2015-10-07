@@ -16,7 +16,7 @@
 
 ## Facebook
 
-- [1.1](#1.1) <a name='1.1'></a> **Preparação**: Primeiramente é necessário criar um AppID no portal de desenvolvimento do Facebook (https://developers.facebook.com). Em 'My Apps' selecione a opção 'Add a New App'.
+### [1.1](#1.1) <a name='1.1'></a> Preparação: Primeiramente é necessário criar um AppID no portal de desenvolvimento do Facebook (https://developers.facebook.com). Em 'My Apps' selecione a opção 'Add a New App'.
 ![alt tag](https://github.com/higorn/mobile-socialstuffs/blob/master/resources/img/getStarted-1.png)
   Selecione a plataforma desejada, entre com um nome para o App e clique no botão para criar o App ID.
   Após isso você será direcionado para a página de Quick Start da plataforma, clique em 'Skip Quick Start' no canto superior direito para pular essa etapa que será realizada mais a frente.
@@ -26,7 +26,7 @@
 
 **[⬆ back to top](#sumário)**
 
-- [1.2](#1.2) <a name='1.2'></a> **Instalação Android**
+### [1.2](#1.2) <a name='1.2'></a> Instalação Android
 ```sh
 # Cria a aplicação e adicione a plataforma
 $ cordova create myapp br.com.yourdomain.mobile.myapp myApp
@@ -97,13 +97,13 @@ $ keytool -exportcert -alias androiddebugkey -keystore ~/.android/debug.keystore
 ```
 **[⬆ back to top](#sumário)**
 
-- [1.3](#1.3) <a name='1.3'></a> **Instalação IOS**
+### [1.3](#1.3) <a name='1.3'></a> Instalação IOS
 
 cordova plugin add https://github.com/Wizcorp/phonegap-facebook-plugin.git --variable APP_ID="123456789" --variable APP_NAME="myApplication"
 
 **[⬆ back to top](#sumário)**
 
-- [1.4](#1.4) <a name='1.4'></a> **Utilizando**
+### [1.4](#1.4) <a name='1.4'></a> Utilizando
 
 Inclua o ng-cordova.js ou ng-cordova.min.js no seu index.html antes do cordova.js e após seu angularjs/ionic, já que o ngCordova depende do angularjs.
 
@@ -119,7 +119,7 @@ angular.module('myApp', ['ngCordova'])
 ```
 **[⬆ back to top](#sumário)**
 
-### [1.4.1](#1.4.1) <a name='1.4.1'></a> Métodos
+#### [1.4.1](#1.4.1) <a name='1.4.1'></a> Métodos
 
 #### login(permissions)
 
@@ -152,7 +152,7 @@ Faz logout do Facebook
 
 **[⬆ back to top](#sumário)**
 
-## Exemplo de Login
+#### [1.4.2](#1.4.2) <a name='1.4.2'></a> Exemplo de Login
 
 ```javascript
 module.controller('MyCtrl', function($scope, $cordovaFacebook) {
@@ -170,7 +170,7 @@ module.controller('MyCtrl', function($scope, $cordovaFacebook) {
     
 ```
 
-## Exemplo de compartilhamento
+#### [1.4.3](#1.4.3) <a name='1.4.3'></a> Exemplo de Compartilhamento
 
 ```javascript
 ...
@@ -196,7 +196,7 @@ $cordovaFacebook.showDialog({
 
 ```
 
-## Buscando informações do usuário
+#### [1.4.4](#1.4.4) <a name='1.4.4'></a> Recuperando Informações do Usuário
 
 ```javascript
 ...
