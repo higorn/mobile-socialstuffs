@@ -17,8 +17,8 @@
 - [1.2](#1.2) <a name='1.2'></a> **Instalação Android**
 ```sh
 # Cria a aplicação e adicione a plataforma
-$ cordova create myApp
-$ cd myApp
+$ cordova create myapp br.com.yourdomain.mobile.myapp myApp
+$ cd myapp
 $ cordova platform add android
 
 # Configure o FB App ID em res/values/facebookconnect.xml
@@ -27,7 +27,7 @@ $ vi res/values/facebookconnect.xml
 
 <resources>
     <string name="fb_app_id">123456789</string>
-    <string name="fb_app_name">TEST</string>
+    <string name="fb_app_name">myapp</string>
 </resources>
 
 ```
@@ -35,11 +35,50 @@ Em seguida continue com a configuração do cordova executando os seguintes coma
 
 ```sh
 # IMPORTATE: Não esqueça de trocar o APP_ID e APP_NAME para os da sua aplicação
-cordova -d plugin add https://github.com/phonegap/phonegap-facebook-plugin.git --variable APP_ID="123456789" --variable APP_NAME="myApplication"
+$ cordova -d plugin add https://github.com/phonegap/phonegap-facebook-plugin.git \
+ --variable APP_ID="123456789" --variable APP_NAME="myApp"
+ 
+$ cordova plugin add https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin.git
 
-android update project --subprojects --path "platforms/android" --target android-22 --library "CordovaLib"
+$ android update project --subprojects --path "platforms/android" \
+ --target android-22 --library "CordovaLib"
 
-android update project --subprojects --path "platforms/android" --target android-22 --library "com.phonegap.plugins.facebookconnect/FacebookLib"
+$ android update project --subprojects --path "platforms/android" \
+ --target android-22 --library "phonegap-facebook-plugin/myapp-FacebookLib"
+
+$ cd platforms/android
+$ cp local.properties phonegap-facebook-plugin/myapp-FacebookLib/
+$ ant clean
+$ cd phonegap-facebook-plugin/socialstuffs-FacebookLib/
+$ ant clean
+
+# edite o AndroidManifest.xml e troque o minSdkVersion e targetSdkVersion para o seu ambiente
+# no meu caso ficou:
+# <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="22" />
+
+$ ant release
+
+# OBS: Se aparecer BUILD FAILED após o 'ant release' reclamando que não existe o ant-build ('...ant-build does not exist), pode desconsiderar.
+
+$ cd ../../../..
+
+$ cordova build android
+ 
+$ echo '{"directory": "www/bower_components"}' > .bowerrc
+$ bower install -S ngCordova
+```
+
+Inclua o ng-cordova.js ou ng-cordova.min.js no seu index.html antes do cordova.js e após seu angularjs/ionic, já que o ngCordova depende do angularjs.
+
+```javascript
+<script src="bower_components/ngCordova/dist/ng-cordova.js"></script>
+<script src="cordova.js"></script>
+```
+
+Injete o ngCordova como dependência no seu módulo angular
+
+```javascript
+angular.module('myApp', ['ngCordova'])
 ```
 
 
