@@ -1,0 +1,76 @@
+<ons-page ng-controller="TabsCtrl">
+
+  <div class="navigation-bar navigation-bar--android">
+    <div class="navigation-bar__left navigation-bar--android__left">
+      <span class="toolbar-button navigation-bar__line-height" style="padding:0 5px 0 5px;"></span>
+    </div>
+    <div class="navigation-bar__center navigation-bar--android__center">
+      <span class="toolbar-button navigation-bar__line-height" style="padding:0">
+        <i class="ion-cube" style="font-size:20px;"></i> Social Stuffs
+      </span>
+    </div>
+    <div class="navigation-bar__right navigation-bar--android__right">
+      <span class="toolbar-button--quiet navigation-bar__line-height" ng-click="show('page/sharewith.html')">
+        <i class="ion-android-share-alt" style="font-size:20px;"></i>
+      </span>
+      <span class="toolbar-button--quiet navigation-bar__line-height" ng-click="logout()">
+        <i class="ion-log-out" style="font-size:20px;"></i>
+      </span>
+      <span class="toolbar-button--quiet navigation-bar__line-height">
+        <i class="ion-android-more-horizontal" style="font-size:20px;"></i>
+      </span>
+    </div>
+  </div>
+
+  <div class="tab-bar tab-bar--top tab-bar--top-border">
+    <label class="tab-bar__item tab-bar--top-border__item">
+      <input type="radio" name="top-tab-bar-b" value="home" ng-model="page">
+      <button class="tab-bar__button tab-bar--top-border__button">
+        Link
+      </button>
+    </label>
+
+    <label class="tab-bar__item tab-bar--top-border__item">
+      <input type="radio" name="top-tab-bar-b" value="comments" ng-model="page">
+      <button class="tab-bar__button tab-bar--top-border__button">
+        Message
+      </button>
+    </label>
+
+    <label class="tab-bar__item tab-bar--top-border__item">
+      <input type="radio" name="top-tab-bar-b" value="activity" ng-model="page">
+      <button class="tab-bar__button tab-bar--top-border__button">
+        Image
+      </button>
+    </label>
+  </div>
+  <ons-carousel swipeable overscrollable auto-scroll fullscrenn var="myCarousel" style="height: 100%; width: 100%">
+    <ons-carousel-item>
+      <!--<div class="center">Entre com uma URL para compartilhar</div>-->
+      <div class="formarea">
+        <div class="form-row">
+          <input type="url" class="text-input--underbar width-full" placeholder="Entre com uma url para compartilhar" ng-model="url">
+
+        </div>
+      </div>
+    </ons-carousel-item>
+    <ons-carousel-item>
+      <div class="formarea" style="height: 20%;">
+        <div class="form-row">
+          <textarea class="textarea textarea--transpanret" placeholder="Message" ng-model="message" style="width: 100%; height: 100%"></textarea>
+        </div>
+      </div>
+    </ons-carousel-item>
+    <ons-carousel-item>
+      <div class="formarea">
+        <div class="form-row">
+          <image id="pic" src="{{image}}"></image>
+        </div>
+        <div class="form-row">
+          <ons-button modifier="large" ng-click="takePic()"><ons-icon icon="ion-ios-camera"></ons-icon></ons-button>
+        </div>
+      </div>
+    </ons-carousel-item>
+  </ons-carousel>
+</ons-page>
+

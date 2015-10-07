@@ -1,0 +1,10 @@
+<ons-dialog cancelable ng-controller="ShareCtrl">
+
+  <ons-list>
+    <ons-list-item ng-repeat="media in medias" modifier="tappable" ng-click="share(media.label)">
+      <ons-icon icon="{{media.icon}}" size="20px"></ons-icon>
+      {{media.label}}
+    </ons-list-item>
+  </ons-list>
+
+</ons-dialog>
