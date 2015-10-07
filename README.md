@@ -119,7 +119,7 @@ angular.module('myApp', ['ngCordova'])
 ```
 **[⬆ back to top](#sumário)**
 
-[1.4.1](#1.4.1) <a name='1.4.1'></a> ###Métodos
+### [1.4.1](#1.4.1) <a name='1.4.1'></a> Métodos
 
 #### login(permissions)
 
