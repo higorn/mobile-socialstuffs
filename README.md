@@ -3,7 +3,7 @@
 ## Sumário
 
 1. [Facebook](#Facebook)
-1. [Referências](#Referências)
+1. [Referências](#referências)
 
 ## Facebook
 
