@@ -61,7 +61,23 @@ $ ant release
 # OBS: Se aparecer BUILD FAILED após o 'ant release' reclamando que não existe o ant-build ('...ant-build does not exist), pode desconsiderar.
 
 $ cd ../../../..
+```
 
+Para a autenticação funcionar de forma nativa no android, é necessário adicionar a plataforma Android no seu portal de desenvolvimento do Facebook (https://developers.facebook.com).
+Em 'Settings/Configurações' clique no botão 'Add Platform' e selecione Android.
+![alt tag](https://github.com/higorn/mobile-socialstuffs/blob/master/resources/img/fbdev-addplatform.png)
+
+Em seguida preencha o formulário conforme exemplo abaixo.
+![alt tag](https://github.com/higorn/mobile-socialstuffs/blob/master/resources/img/fbdev-platformsettings.png)
+
+Para saber o nome do pacote da sua aplicação (Package Name) consulte o arquivo platforms/android/AndroidManifest.xml
+E para gerar a chave de denvolvimento execute o seguinte comando abaixo
+```sh
+$ keytool -exportcert -alias androiddebugkey -keystore ~/.android/debug.keystore | openssl sha1 -binary | openssl base64
+
+# Caso pessa senha, deixe em brando apenas pressionando enter
+
+```sh
 $ cordova build android
  
 $ echo '{"directory": "www/bower_components"}' > .bowerrc
