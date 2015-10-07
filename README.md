@@ -3,6 +3,7 @@
 ## Sumário
 
 1. [Facebook](#facebook)
+  1.1[Preparação](*preparação)
 1. [Referências](#referências)
 
 ## Facebook
@@ -14,6 +15,8 @@
 ![alt tag](https://github.com/higorn/mobile-socialstuffs/blob/master/resources/img/fbdev-quickstart.png)
   Agora você está na dashboard do seu App, onde tem o App ID e o nome do seu App que serão usados para configuração do cordova.
 ![alt tag](https://github.com/higorn/mobile-socialstuffs/blob/master/resources/img/fbdev-dashboard.png)
+
+**[⬆ back to top](#sumário)**
 
 - [1.2](#1.2) <a name='1.2'></a> **Instalação Android**
 ```sh
@@ -90,6 +93,7 @@ $ keytool -exportcert -alias androiddebugkey -keystore ~/.android/debug.keystore
 
 cordova plugin add https://github.com/Wizcorp/phonegap-facebook-plugin.git --variable APP_ID="123456789" --variable APP_NAME="myApplication"
 
+**[⬆ back to top](#sumário)**
 
 - [1.4](#1.4) <a name='1.4'></a> **Utilizando**
 
@@ -105,6 +109,7 @@ Injete o ngCordova como dependência no seu módulo angular
 ```javascript
 angular.module('myApp', ['ngCordova'])
 ```
+**[⬆ back to top](#sumário)**
 
 ## Métodos
 
@@ -137,6 +142,7 @@ Recupera o tokem de acesso da sessão atual.
 #### logout(message)
 Faz logout do Facebook
 
+**[⬆ back to top](#sumário)**
 
 ## Exemplo de Login
 
@@ -201,3 +207,5 @@ $cordovaFacebook.showDialog({
 - [2.1](#2.1) <a name='2.1'></a> http://ngcordova.com/docs/plugins/facebook/
 - [2.2](#2.2) <a name='2.2'></a> https://github.com/Wizcorp/phonegap-facebook-plugin/
 - [2.3](#2.3) <a name='2.3'></a> https://developers.facebook.com
+
+**[⬆ back to top](#sumário)**
