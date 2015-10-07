@@ -198,6 +198,6 @@ $cordovaFacebook.showDialog({
 ```
 
 ## Referências
-- [2.1](#2.1) <a name='2.1'></a> http:://ngcordova.com/docs/plugins/facebook/
+- [2.1](#2.1) <a name='2.1'></a> http://ngcordova.com/docs/plugins/facebook/
 - [2.2](#2.2) <a name='2.2'></a> https://github.com/Wizcorp/phonegap-facebook-plugin/
 - [2.3](#2.3) <a name='2.3'></a> https://developers.facebook.com
