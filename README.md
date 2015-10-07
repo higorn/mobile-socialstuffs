@@ -3,7 +3,7 @@
 ## Sumário
 
 1. [Facebook](##Facebook)
-2. [Referências](##Referências)
+1. [Referências](##Referências)
 
 ## Facebook
 
@@ -84,6 +84,7 @@ $ keytool -exportcert -alias androiddebugkey -keystore ~/.android/debug.keystore
 
 # Caso pessa senha, deixe em brando apenas pressionando enter
 ```
+**[⬆ back to top](#Sumário)**
 
 - [1.3](#1.3) <a name='1.3'></a> **Instalação IOS**
 
