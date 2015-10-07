@@ -76,6 +76,7 @@ E para gerar a chave de denvolvimento execute o seguinte comando abaixo
 $ keytool -exportcert -alias androiddebugkey -keystore ~/.android/debug.keystore | openssl sha1 -binary | openssl base64
 
 # Caso pessa senha, deixe em brando apenas pressionando enter
+```
 
 ```sh
 $ cordova build android
