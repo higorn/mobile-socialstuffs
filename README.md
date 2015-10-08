@@ -100,7 +100,18 @@ $ keytool -exportcert -alias androiddebugkey -keystore ~/.android/debug.keystore
 
 ### [1.3](#1.3) <a name='1.3'></a> Instalação IOS
 
-cordova plugin add https://github.com/Wizcorp/phonegap-facebook-plugin.git --variable APP_ID="123456789" --variable APP_NAME="myApplication"
+```sh
+$ cordova platform add ios
+
+$ git clone https://github.com/Wizcorp/phonegap-facebook-plugin.git some_path/phonegap-facebook-plugin
+
+$ cordova -d plugin add some_path/phonegap-facebook-plugin --variable APP_ID="123456789" --variable APP_NAME="myApplication"
+```
+
+Adicione e configure a plataforma IOs no Portal de Desenvolvimento do Facebook (https://developers.facebook.com) conforme a imagem abaixo.
+![alt tag](https://github.com/higorn/mobile-socialstuffs/blob/master/resources/img/fbdev-platformios.png)
+
+Adicione o Bundle ID que você encontra no Xcode do projeto e abilite a opção 'Single Sign On'
 
 **[⬆ back to top](#sumário)**
 
