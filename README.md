@@ -113,6 +113,14 @@ Adicione e configure a plataforma IOs no Portal de Desenvolvimento do Facebook (
 
 Adicione o Bundle ID que você encontra no Xcode do projeto e abilite a opção 'Single Sign On'
 
+Compile para plataforma ios
+
+```sh
+$ cordova build ios
+```
+Agora localize dentro da pasta da plataforma (platforms/ios) o arquivo de projeto 'myapp.xcodeproj' e abra-o no Xcode. Dentro do Xcode, é necessário desabilitar a opção de compilação 'Enable Bitcode' conforme imagem abaixo para não dar erro na compilação.
+![alt tag](https://github.com/higorn/mobile-socialstuffs/blob/master/resources/img/fbdev-xcodeconf.png)
+
 **[⬆ back to top](#sumário)**
 
 ### [1.4](#1.4) <a name='1.4'></a> Utilizando
