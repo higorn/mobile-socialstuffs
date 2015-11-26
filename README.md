@@ -76,6 +76,34 @@ $ ant release
 $ cd ../../../..
 $ cordova build android
 
+# No caso da compilação falhar com o erro abaixo...
+:dexDebug FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':dexDebug'.
+> com.android.ide.common.internal.LoggedErrorException: Failed to run command:
+  	/home/higor/Android/Sdk/build-tools/22.0.1/dx --dex --no-optimize --output /fontes/pull4up/fidelity_hybrid_app/platforms/android/build/intermediates/dex/debug --input-list=/fontes/pull4up/fidelity_hybrid_app/platforms/android/build/intermediates/tmp/dex/debug/inputList.txt
+  Error Code:
+  	2
+  Output:
+  	
+  	UNEXPECTED TOP-LEVEL EXCEPTION:
+  	com.android.dex.DexException: Multiple dex files define Landroid/support/annotation/AnimRes;
+  		at com.android.dx.merge.DexMerger.readSortableTypes(DexMerger.java:596)
+  		at com.android.dx.merge.DexMerger.getSortedTypes(DexMerger.java:554)
+  		at com.android.dx.merge.DexMerger.mergeClassDefs(DexMerger.java:535)
+  		at com.android.dx.merge.DexMerger.mergeDexes(DexMerger.java:171)
+  		at com.android.dx.merge.DexMerger.merge(DexMerger.java:189)
+  		at com.android.dx.command.dexer.Main.mergeLibraryDexBuffers(Main.java:454)
+  		at com.android.dx.command.dexer.Main.runMonoDex(Main.java:303)
+  		at com.android.dx.command.dexer.Main.run(Main.java:246)
+  		at com.android.dx.command.dexer.Main.main(Main.java:215)
+  		at com.android.dx.command.Main.main(Main.java:106)
+  	
+# Deve se remover o arquivo ./platforms/android/libs/android-support-v13.jar
+
 # Instale o ngCordova
 
 $ echo '{"directory": "www/bower_components"}' > .bowerrc
