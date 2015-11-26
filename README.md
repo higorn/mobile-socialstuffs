@@ -103,6 +103,7 @@ Execution failed for task ':dexDebug'.
   		at com.android.dx.command.Main.main(Main.java:106)
   	
 # Deve se remover o arquivo ./platforms/android/libs/android-support-v13.jar
+# e rodar 'cordova build android' novamente
 
 # Instale o ngCordova
 
