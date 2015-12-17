@@ -63,6 +63,7 @@ $ bower install -S ngCordova
 
 Para a autenticação funcionar de forma nativa no android, é necessário adicionar a plataforma Android no seu portal de desenvolvimento do Facebook (https://developers.facebook.com).
 Em 'Settings/Configurações' clique no botão 'Add Platform' e selecione Android.
+
 ![alt tag](https://github.com/higorn/mobile-socialstuffs/blob/master/resources/img/fbdev-addplatform.png)
 
 Em seguida preencha o formulário conforme exemplo abaixo.
