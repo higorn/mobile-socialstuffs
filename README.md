@@ -48,62 +48,12 @@ Em seguida continue com a configuração do cordova executando os seguintes coma
 
 ```sh
 # IMPORTATE: Não esqueça de trocar o APP_ID e APP_NAME para os da sua aplicação
-$ cordova -d plugin add https://github.com/phonegap/phonegap-facebook-plugin.git \
- --variable APP_ID="123456789" --variable APP_NAME="myApp"
- 
+
+$ phonegap plugin add --save cordova-plugin-facebook4 --variable APP_ID="App ID" --variable APP_NAME="App Name"
+
 $ cordova plugin add https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin.git
 
-$ android update project --subprojects --path "platforms/android" \
- --target android-22 --library "CordovaLib"
-
-$ android update project --subprojects --path "platforms/android" \
- --target android-22 --library "phonegap-facebook-plugin/myapp-FacebookLib"
-
-$ cd platforms/android
-$ cp local.properties phonegap-facebook-plugin/myapp-FacebookLib/
-$ ant clean
-$ cd phonegap-facebook-plugin/socialstuffs-FacebookLib/
-$ ant clean
-
-# edite o AndroidManifest.xml e troque o minSdkVersion e targetSdkVersion para o seu ambiente
-# no meu caso ficou:
-# <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="22" />
-
-$ ant release
-
-# OBS: Se aparecer BUILD FAILED após o 'ant release' reclamando que não existe o ant-build ('...ant-build does not exist), pode desconsiderar.
-
-$ cd ../../../..
 $ cordova build android
-
-# No caso da compilação falhar com o erro abaixo...
-:dexDebug FAILED
-
-FAILURE: Build failed with an exception.
-
-* What went wrong:
-Execution failed for task ':dexDebug'.
-> com.android.ide.common.internal.LoggedErrorException: Failed to run command:
-  	/home/higor/Android/Sdk/build-tools/22.0.1/dx --dex --no-optimize --output /fontes/pull4up/fidelity_hybrid_app/platforms/android/build/intermediates/dex/debug --input-list=/fontes/pull4up/fidelity_hybrid_app/platforms/android/build/intermediates/tmp/dex/debug/inputList.txt
-  Error Code:
-  	2
-  Output:
-  	
-  	UNEXPECTED TOP-LEVEL EXCEPTION:
-  	com.android.dex.DexException: Multiple dex files define Landroid/support/annotation/AnimRes;
-  		at com.android.dx.merge.DexMerger.readSortableTypes(DexMerger.java:596)
-  		at com.android.dx.merge.DexMerger.getSortedTypes(DexMerger.java:554)
-  		at com.android.dx.merge.DexMerger.mergeClassDefs(DexMerger.java:535)
-  		at com.android.dx.merge.DexMerger.mergeDexes(DexMerger.java:171)
-  		at com.android.dx.merge.DexMerger.merge(DexMerger.java:189)
-  		at com.android.dx.command.dexer.Main.mergeLibraryDexBuffers(Main.java:454)
-  		at com.android.dx.command.dexer.Main.runMonoDex(Main.java:303)
-  		at com.android.dx.command.dexer.Main.run(Main.java:246)
-  		at com.android.dx.command.dexer.Main.main(Main.java:215)
-  		at com.android.dx.command.Main.main(Main.java:106)
-  	
-# Deve se remover o arquivo ./platforms/android/libs/android-support-v13.jar
-# e rodar 'cordova build android' novamente
 
 # Instale o ngCordova
 
