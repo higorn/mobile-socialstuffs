@@ -79,14 +79,6 @@ $ keytool -exportcert -alias androiddebugkey -keystore ~/.android/debug.keystore
 
 ### [1.3](#1.3) <a name='1.3'></a> Instalação IOS
 
-```sh
-$ cordova platform add ios
-
-$ git clone https://github.com/Wizcorp/phonegap-facebook-plugin.git some_path/phonegap-facebook-plugin
-
-$ cordova -d plugin add some_path/phonegap-facebook-plugin --variable APP_ID="123456789" --variable APP_NAME="myApplication"
-```
-
 Adicione e configure a plataforma IOs no Portal de Desenvolvimento do Facebook (https://developers.facebook.com) conforme a imagem abaixo.
 ![alt tag](https://github.com/higorn/mobile-socialstuffs/blob/master/resources/img/fbdev-platformios.png)
 
@@ -97,8 +89,8 @@ Compile para plataforma ios
 ```sh
 $ cordova build ios
 ```
-Agora localize dentro da pasta da plataforma (platforms/ios) o arquivo de projeto 'myapp.xcodeproj' e abra-o no Xcode. Dentro do Xcode, é necessário desabilitar a opção de compilação 'Enable Bitcode' conforme imagem abaixo para não dar erro na compilação.
-![alt tag](https://github.com/higorn/mobile-socialstuffs/blob/master/resources/img/fbdev-xcodeconf.png)
+Agora o arquivo 'platforms/ios/Paludo Fidelidade/Paludo Fidelidade-Info.plist' e localize a opção 'App Transport Security Settings', expanda a opção e adicione a subtag 'Allow Arbitrary Loads' (no botão de + ao lado) e sete como 'YES'.
+Pronto, agora é só abrir o projeto no xcode e executar.
 
 **[⬆ back to top](#sumário)**
 
