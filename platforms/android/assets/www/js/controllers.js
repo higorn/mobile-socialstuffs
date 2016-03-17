@@ -105,13 +105,15 @@ app.controller('LoginCtrl', ['$scope', '$cordovaFacebook', function($scope, $cor
 
   $scope.fbLogin = function() {
 
-    $cordovaFacebook.login(['public_profile', 'email', 'user_friends']).then(function(resp) {
-      console.log('resp: '+JSON.stringify(resp));
+    $cordovaFacebook.login(['email', 'public_profile']).then(function(resp) {
+      console.log('resp:');
+      console.log(resp);
       if (resp.status === 'connected') {
 
-        $cordovaFacebook.api('me', null).then(function(result) {
+        $cordovaFacebook.api('me?fields=id,name,email,gender,birthday,picture,link', null).then(function(result) {
 
-          console.log('res: '+JSON.stringify(result));
+          console.log('res:');
+          console.log(result);
           $scope.appNavigator.popPage();
         }, function(error) {
 
