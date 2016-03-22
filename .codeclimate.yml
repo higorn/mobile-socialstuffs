@@ -11,4 +11,10 @@ ratings:
   - "**.css"
   - "**.js"
   - "**.jsx"
-exclude_paths: []
+exclude_paths:
+  - hooks/**/*
+  - platforms/**/*
+  - plugins/**/*
+  - res/**/*
+  - resources/**/*
+  - www/bower_components
